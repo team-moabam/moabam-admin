@@ -10,14 +10,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [vue()],
-    base: './',
-    css: {
-      postcss: {
-        plugins: [
-          autoprefixer({}) // add options if needed
-        ],
-      }
-    },
+
     resolve: {
       alias: [
         // webpack path resolve to vitejs
@@ -34,16 +27,7 @@ export default defineConfig(({ mode }) => {
           replacement: path.resolve(__dirname, '/src'),
         },
       ],
-      extensions: [
-        '.mjs',
-        '.js',
-        '.ts',
-        '.jsx',
-        '.tsx',
-        '.json',
-        '.vue',
-        '.scss',
-      ],
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue', '.scss'],
     },
     server: {
       port: 3000,
