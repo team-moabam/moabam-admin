@@ -236,11 +236,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const memberId = localStorage.getItem('memberId')
-  console.log('===================')
   console.log(to)
-  console.log(from)
-  console.log('Path: ' + to.path + ' Full Path: ' + to.fullPath)
-  console.log('===================')
   if (!to.path.startsWith('/login') && !memberId) {
     console.log(to.path)
     next('/login')
