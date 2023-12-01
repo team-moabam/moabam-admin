@@ -185,12 +185,12 @@ const routes = [
           {
             path: '404',
             name: 'Page404',
-            component: () => import('@/views/pages/Page404'),
+            component: () => import('@/views/pages/Page404.vue'),
           },
           {
             path: '500',
             name: 'Page500',
-            component: () => import('@/views/pages/Page500'),
+            component: () => import('@/views/pages/Page500.vue'),
           },
         ],
       },
@@ -209,19 +209,19 @@ const routes = [
       {
         path: '',
         name: 'Login',
-        component: () => import('@/views/pages/Login'),
+        component: () => import('@/views/pages/Login.vue'),
       },
       {
         path: '/login/register',
         name: 'Register',
-        component: () => import('@/views/pages/Register'),
+        component: () => import('@/views/pages/Register.vue'),
       },
     ],
   },
   {
     path: '/login/kakao/oauth',
     name: 'KakaoOAuthCallback',
-    component: () => import('@/views/pages/KakaoLogin'),
+    component: () => import('@/views/pages/KakaoLogin.vue'),
   },
 ]
 
@@ -238,10 +238,8 @@ router.beforeEach((to, from, next) => {
   const memberId = localStorage.getItem('memberId')
   console.log(to)
   if (!to.path.startsWith('/login') && !memberId) {
-    console.log(to.path)
     next('/login')
   } else {
-    console.log(to.path)
     next()
   }
 })

@@ -1,13 +1,7 @@
 import { defineComponent, h, onMounted, ref, resolveComponent } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 
-import {
-  CBadge,
-  CSidebarNav,
-  CNavItem,
-  CNavGroup,
-  CNavTitle,
-} from '@coreui/vue'
+import { CBadge, CSidebarNav, CNavItem, CNavGroup, CNavTitle } from '@coreui/vue'
 import nav from '@/_nav.js'
 
 const normalizePath = (path) =>
@@ -103,11 +97,7 @@ const AppSidebarNav = defineComponent({
                             customClassName: 'nav-icon',
                             name: item.icon,
                           })
-                        : h(
-                            'span',
-                            { class: 'nav-icon' },
-                            h('span', { class: 'nav-icon-bullet' }),
-                          ),
+                        : h('span', { class: 'nav-icon' }, h('span', { class: 'nav-icon-bullet' })),
                       item.name,
                       item.badge &&
                         h(
