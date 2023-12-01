@@ -88,7 +88,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'Create',
+  name: 'CouponCreate',
 
   data() {
     return {

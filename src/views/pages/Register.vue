@@ -22,11 +22,7 @@
                   <CInputGroupText>
                     <CIcon icon="cil-lock-locked" />
                   </CInputGroupText>
-                  <CFormInput
-                    type="password"
-                    placeholder="Password"
-                    autocomplete="new-password"
-                  />
+                  <CFormInput type="password" placeholder="Password" autocomplete="new-password" />
                 </CInputGroup>
                 <CInputGroup class="mb-4">
                   <CInputGroupText>

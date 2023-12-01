@@ -50,7 +50,7 @@ const routes = [
         children: [
           {
             path: '/member/blackList',
-            name: 'Member Management',
+            name: 'BlackList',
             component: () => import('@/views/member/BlackList.vue'),
           },
         ],
@@ -78,7 +78,7 @@ const routes = [
        */
       {
         path: '/coupon',
-        name: 'Payment',
+        name: 'Coupon',
         component: {
           render() {
             return h(resolveComponent('router-view'))
@@ -88,12 +88,12 @@ const routes = [
         children: [
           {
             path: '/coupon/management',
-            name: 'Coupon Management',
+            name: 'CouponManagement',
             component: () => import('@/views/coupon/Management.vue'),
           },
           {
             path: '/coupon/create',
-            name: 'Coupon Create',
+            name: 'CouponCreate',
             component: () => import('@/views/coupon/Create.vue'),
           },
         ],
@@ -113,9 +113,9 @@ const routes = [
         redirect: '/report/management',
         children: [
           {
-            path: '/coupon/management',
+            path: '/report/management',
             name: 'Coupon Management',
-            component: () => import('@/views/coupon/Management.vue'),
+            component: () => import('@/views/report/Management.vue'),
           },
         ],
       },
@@ -135,13 +135,13 @@ const routes = [
         children: [
           {
             path: '/item/management',
-            name: 'Item Management',
+            name: 'ItemManagement',
             component: () => import('@/views/item/Management.vue'),
           },
 
           {
             path: '/item/create',
-            name: 'Item Create',
+            name: 'ItemCreate',
             component: () => import('@/views/item/Create.vue'),
           },
         ],
@@ -212,7 +212,7 @@ const routes = [
         component: () => import('@/views/pages/Login'),
       },
       {
-        path: 'register',
+        path: '/login/register',
         name: 'Register',
         component: () => import('@/views/pages/Register'),
       },
@@ -234,16 +234,16 @@ const router = createRouter({
   },
 })
 
-router.beforeEach((to, from, next) => {
-  const memberId = localStorage.getItem('memberId')
+// router.beforeEach((to, from, next) => {
+//   const memberId = localStorage.getItem('memberId')
 
-  if (!to.path.startsWith('/login') && !memberId) {
-    console.log(to.path)
-    next('/login')
-  } else {
-    console.log(to.path)
-    next()
-  }
-})
+//   if (!to.path.startsWith('/login') && !memberId) {
+//     console.log(to.path)
+//     next('/login')
+//   } else {
+//     console.log(to.path)
+//     next()
+//   }
+// })
 
 export default router

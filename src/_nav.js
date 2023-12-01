@@ -117,17 +117,7 @@ export default [
       {
         component: 'CNavItem',
         name: 'Register',
-        to: '/pages/register',
-      },
-      {
-        component: 'CNavItem',
-        name: 'Error 404',
-        to: '/pages/404',
-      },
-      {
-        component: 'CNavItem',
-        name: 'Error 500',
-        to: '/pages/500',
+        to: '/login/register',
       },
     ],
   },
@@ -139,18 +129,13 @@ export default [
     items: [
       {
         component: 'CNavItem',
-        name: 'Register',
-        to: '/pages/register',
-      },
-      {
-        component: 'CNavItem',
         name: 'Error 404',
-        to: '/pages/404',
+        to: '/error/404',
       },
       {
         component: 'CNavItem',
         name: 'Error 500',
-        to: '/pages/500',
+        to: '/error/500',
       },
     ],
   },
