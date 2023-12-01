@@ -1,8 +1,7 @@
 import { h, resolveComponent } from 'vue'
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
-import KakaoOAuthCallback from '@/views/pages/KakaoLogin.vue'
-import DefaultLayout from '@/layouts/DefaultLayout'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 const routes = [
   {

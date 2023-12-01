@@ -56,8 +56,8 @@
 <script>
 import { onMounted, ref } from 'vue'
 import { useColorModes } from '@coreui/vue'
-import AppBreadcrumb from './AppBreadcrumb'
-import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt'
+import AppBreadcrumb from './AppBreadcrumb.vue'
+import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt.vue'
 export default {
   name: 'AppHeader',
   components: {
