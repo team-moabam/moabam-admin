@@ -234,16 +234,16 @@ const router = createRouter({
   },
 })
 
-// router.beforeEach((to, from, next) => {
-//   const memberId = localStorage.getItem('memberId')
+router.beforeEach((to, from, next) => {
+  const memberId = localStorage.getItem('memberId')
 
-//   if (!to.path.startsWith('/login') && !memberId) {
-//     console.log(to.path)
-//     next('/login')
-//   } else {
-//     console.log(to.path)
-//     next()
-//   }
-// })
+  if (!to.path.startsWith('/login') && !memberId) {
+    console.log(to.path)
+    next('/login')
+  } else {
+    console.log(to.path)
+    next()
+  }
+})
 
 export default router
