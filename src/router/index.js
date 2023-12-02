@@ -48,7 +48,7 @@ const routes = [
         redirect: '/member/blackList',
         children: [
           {
-            path: '/member/blackList',
+            path: 'blackList',
             name: 'BlackList',
             component: () => import('@/views/member/BlackList.vue'),
           },
@@ -65,7 +65,7 @@ const routes = [
         redirect: '/payment/management',
         children: [
           {
-            path: '/payment/management',
+            path: 'management',
             name: 'Payment Management',
             component: () => import('@/views/payment/Management.vue'),
           },
@@ -86,12 +86,12 @@ const routes = [
         redirect: '/coupon/management',
         children: [
           {
-            path: '/coupon/management',
+            path: 'management',
             name: 'CouponManagement',
             component: () => import('@/views/coupon/Management.vue'),
           },
           {
-            path: '/coupon/create',
+            path: 'create',
             name: 'CouponCreate',
             component: () => import('@/views/coupon/Create.vue'),
           },
@@ -112,7 +112,7 @@ const routes = [
         redirect: '/report/management',
         children: [
           {
-            path: '/report/management',
+            path: 'management',
             name: 'Coupon Management',
             component: () => import('@/views/report/Management.vue'),
           },
@@ -133,13 +133,13 @@ const routes = [
         redirect: '/item/management',
         children: [
           {
-            path: '/item/management',
+            path: 'management',
             name: 'ItemManagement',
             component: () => import('@/views/item/Management.vue'),
           },
 
           {
-            path: '/item/create',
+            path: 'create',
             name: 'ItemCreate',
             component: () => import('@/views/item/Create.vue'),
           },
@@ -160,13 +160,13 @@ const routes = [
         redirect: '/badge/management',
         children: [
           {
-            path: '/badge/management',
+            path: 'management',
             name: 'Badge Management',
             component: () => import('@/views/coupon/Management.vue'),
           },
 
           {
-            path: '/badge/create',
+            path: 'create',
             name: 'Badge Create',
             component: () => import('@/views/coupon/Create.vue'),
           },
@@ -193,6 +193,10 @@ const routes = [
           },
         ],
       },
+
+      /**
+       * 추가 라우팅이 필요하다면 여기에 추가하시면 됩니다.
+       */
     ],
   },
   {
@@ -211,7 +215,7 @@ const routes = [
         component: () => import('@/views/pages/Login.vue'),
       },
       {
-        path: '/login/register',
+        path: 'register',
         name: 'Register',
         component: () => import('@/views/pages/Register.vue'),
       },

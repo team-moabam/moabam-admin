@@ -191,4 +191,13 @@ export default [
       },
     ],
   },
+
+  /**
+   * 사이드 바의 추가 항목이 필요하면 여기에 넣으시면 됩니다.
+   *
+   * componenet
+   *  - CNavTitle : 타이틀 추가
+   *  - CNavGroup : 각 타이틀의 그룹
+   *  - CNavItem : 각 그룹의 아이템
+   */
 ]

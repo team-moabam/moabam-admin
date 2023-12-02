@@ -12,7 +12,7 @@
     </CModalFooter>
   </CModal>
 
-  <form v-on:submit="submitForm">
+  <form v-on:submit.prevent="submitForm">
     <CInputGroup class="mb-3">
       <CInputGroupText id="basic-addon1">쿠폰 이름 </CInputGroupText>
       <CFormInput
@@ -40,30 +40,35 @@
       <CInputGroupText>
         <CFormCheck
           type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
+          id="flexRadioVModel1"
           label="아침 쿠폰"
-          value="MORNING_BUG"
+          value="아침"
           v-model="couponType"
         />
         <CFormCheck
           type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
+          id="flexRadioVModel2"
           label="밤 쿠폰"
-          value="NIGHT_BUG"
+          value="저녁"
           v-model="couponType"
         />
         <CFormCheck
           type="radio"
-          name="flexRadioDefault"
-          id="flexRadioDefault1"
+          id="flexRadioVModel2"
           label="황금 쿠폰"
-          value="GOLDEN_BUG"
+          value="황금"
+          v-model="couponType"
+        />
+        <CFormCheck
+          type="radio"
+          id="flexRadioVModel2"
+          label="할인 쿠폰"
+          value="할인"
           v-model="couponType"
         />
       </CInputGroupText>
     </CInputGroup>
+
     <br />
     <CInputGroup>
       <CInputGroupText>쿠폰 발급 가능 날짜</CInputGroupText>
@@ -81,10 +86,11 @@
       ></CFormTextarea>
     </CInputGroup>
     <br />
-    <CButton type="submit" color="primary" size="lg">Large button</CButton>
+    <CButton type="submit" color="primary" size="lg">쿠폰 발행</CButton>
   </form>
 </template>
 <script>
+import { cilRouter } from '@coreui/icons'
 import axios from 'axios'
 
 export default {
@@ -95,7 +101,7 @@ export default {
       name: '',
       point: null,
       description: '',
-      couponType: '',
+      couponType: 'MORNING_BUG',
       stock: null,
       startAt: '',
       openAt: '',
@@ -108,22 +114,20 @@ export default {
         name: this.name,
         point: this.point,
         description: this.description,
-        couponType: this.couponType,
-        stock: this.stock,
+        type: this.couponType,
+        maxCount: this.stock,
         startAt: this.startAt,
         openAt: this.openAt,
       }
       console.log(formData)
+
       axios
-        .post('https://dev-api.moabam.com/admins/coupons', formData, {
+        .post(`${import.meta.env.VITE_DEV_SERVRE}/admins/coupons`, formData, {
           withCredentials: true,
         })
-        .then((response) => {
-          console.log('성공?')
+        .then((result) => {
+          console.log(result)
           this.showModal = true
-        })
-        .catch((error) => {
-          console.log(error)
         })
     },
 
